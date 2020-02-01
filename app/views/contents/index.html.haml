@@ -1,0 +1,24 @@
+= render 'shared/top-title'
+
+.wrapper
+  .main
+    .title
+      新着用語
+
+    .content-header
+      .content-header__tag タグ
+      .content-header__title タイトル 
+      .content-header__content 説明
+
+    - @contents.each do |content|
+      .content-box
+        .content-box__tag
+          - content.tags.each do |content_tag|
+            = content_tag.title
+        .content-box__title
+          = content.title
+        .content-box__content
+          = content.content.truncate(30,omission: '...')
+
+  .side
+    検索用

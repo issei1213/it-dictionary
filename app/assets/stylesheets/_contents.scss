@@ -1,0 +1,61 @@
+.wrapper{
+  display: flex;
+  height: calc(100vh - 80px);
+
+
+  .main{
+    width: 80%;
+    background-color: #f8f6ef;
+    padding-top: 10px;
+    .title{
+      margin: 0 auto;
+      font-size: 15px;
+      text-align: center;
+      background-color: #fce9a8;
+      width: 95%;
+    }
+    
+    .content-header{
+      width: 95%;
+      margin: 0 auto;
+      display: flex;
+      text-align: center;
+      font-weight: bold;
+      &__tag{
+        width: 20%;
+
+      }
+      &__title{
+        width: 40%;
+
+      }
+      &__content{
+        width: 40%;
+
+      }
+    }
+
+
+    .content-box{
+      display: flex;
+      width: 95%;
+      margin: 0 auto;
+      border-bottom:double 3px  #8ec6ff;
+      &__tag{
+
+        width: 20%;
+      }
+      &__title{
+        width: 40%;
+      }
+      &__content{
+        width: 40%;
+      }
+    }
+  }
+
+  .side{
+    width: 20%;
+    background-color: #2f3e51;
+  }
+}

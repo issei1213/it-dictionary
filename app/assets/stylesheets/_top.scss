@@ -1,0 +1,34 @@
+.top{
+  height: 80px;
+  width: 100%;
+  background-color: #1f4795;
+  display: flex;
+  justify-content: flex-end;
+  .title{
+    margin-right: auto;
+    a{
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    line-height: 80px;
+    padding-left: 30px;
+    text-decoration: none;
+    }
+  }
+
+  .post{
+    margin-right: 5%;
+      a{
+        border: solid 3px white;/*線*/
+        border-radius: 10px;/*角の丸み*/
+        color: white;
+        font-weight: bold;
+        line-height: 80px;
+        text-decoration: none;
+        padding: 10px;
+      }
+
+
+
+  }
+}
