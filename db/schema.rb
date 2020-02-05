@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_01_141831) do
+ActiveRecord::Schema.define(version: 2020_02_01_161505) do
 
   create_table "content_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "content_id"
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 2020_02_01_141831) do
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["title"], name: "index_tags_on_title", unique: true
+    t.index ["name"], name: "index_tags_on_name"
   end
 
 end

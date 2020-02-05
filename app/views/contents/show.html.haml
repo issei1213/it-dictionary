@@ -1,0 +1,30 @@
+= render 'shared/top-title'
+
+.content_show
+  .title
+    .title__bar
+      %h1
+        タイトル
+    
+    .title__content
+      .title__content__title
+        = simple_format(@content.title)
+      
+      .title__content__items
+        %ul
+          %li
+            = link_to '削除', content_path, method: :delete
+            = link_to '編集', edit_content_path
+
+    .title__tags
+      .title__tags__title
+        タグ：
+      .title__tags__tag
+        - @content.tags.each do |content_tag|
+          %ul
+            %li
+              = content_tag.name
+
+  .content
+    .@content-box__content
+      = simple_format(@content.content)

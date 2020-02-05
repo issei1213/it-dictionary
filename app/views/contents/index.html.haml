@@ -14,11 +14,11 @@
       .content-box
         .content-box__tag
           - content.tags.each do |content_tag|
-            = content_tag.title
+            = link_to content_tag.name, content_path(content.id)
         .content-box__title
-          = content.title
+          = link_to content.title, content_path(content.id)
         .content-box__content
-          = content.content.truncate(30,omission: '...')
+          = link_to content.content.truncate(30,omission: '...'), content_path(content.id)
 
   .side
     検索用

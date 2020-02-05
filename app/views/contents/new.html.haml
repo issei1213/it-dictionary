@@ -1,6 +1,8 @@
 = render 'shared/top-title'
 
-= form_with model: @post do |f|
-  = f.text_field :title, placeholder: "タイトルを入力"
-  = f.text_field :content, placeholder: "内容を入力"
-  = f.submit '投稿'
+
+= form_with model: @post, class: 'form' do |f|
+  = f.text_field :title, placeholder: "タイトルを入力",class: 'form__title'
+  = f.text_field :tag_name, placeholder: "タグをカンマ区切りで入力",class: 'form__tag'
+  = f.text_area :content, placeholder: "内容を入力", class: 'form__content'
+  = f.submit '投稿', class: 'form__submit'
