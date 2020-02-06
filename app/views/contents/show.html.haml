@@ -13,8 +13,9 @@
       .title__content__items
         %ul
           %li
-            = link_to '削除', content_path, method: :delete
-            = link_to '編集', edit_content_path(@content.id)
+            - if user_signed_in?
+              = link_to '削除', content_path, method: :delete
+              = link_to '編集', edit_content_path(@content.id)
 
     .title__tags
       タグ：
@@ -26,9 +27,13 @@
       -# .title__updated_at
       -#   最終更新日:
       -#   = I18n.l @content.updated_at, format: :long
+      .title__tags__user-name
+        投稿者：
+        = @content.user.name
       .title__tags__created_at 
         投稿日：
         = I18n.l @content.created_at, format: :long
+
 
 
   .content
