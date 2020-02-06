@@ -16,19 +16,30 @@
     }
   }
 
-  .post{
-    margin-right: 5%;
-      a{
-        border: solid 3px white;
-        border-radius: 10px;
-        color: white;
-        font-weight: bold;
-        line-height: 80px;
-        text-decoration: none;
-        padding: 10px;
+  .login{
+    padding-right: 30px;
+    color: white;
+      li{
+        display: inline;
+        .user_name{
+          border-radius: 10px;
+          color: white;
+          font-weight: bold;
+          line-height: 80px;
+          text-decoration: none;
+          padding: 15px;
+          margin-left: 20px;
+        }
+        a{
+          border: solid 3px white;
+          border-radius: 10px;
+          color: white;
+          font-weight: bold;
+          line-height: 80px;
+          text-decoration: none;
+          padding: 15px;
+          margin-left: 20px;
+        }
       }
-
-
-
   }
 }

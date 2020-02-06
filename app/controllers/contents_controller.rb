@@ -12,7 +12,7 @@ class ContentsController < ApplicationController
   end
 
   def create
-    @post = Content.new(title: post_params[:title],content: post_params[:content])
+    @post = Content.new(post_params)
     @post.save
     @post.tag_list.add(post_params[:tag_list],parse: true)
     @post.save
@@ -38,7 +38,7 @@ class ContentsController < ApplicationController
 
   def update
     @post = Content.find(params[:id])
-    @content_update = @post.update(title: post_params[:title],content: post_params[:content])
+    @content_update = @post.update(post_params)
     @post.tag_list = post_params[:tag_list]
     @post.save
     @post.reload
@@ -51,7 +51,7 @@ class ContentsController < ApplicationController
   private
 
   def post_params
-    params.require(:content).permit(:id,:title, :content, :tag_list)
+    params.require(:content).permit(:title, :content, :tag_list).merge(user_id: current_user.id)
   end
 
 
