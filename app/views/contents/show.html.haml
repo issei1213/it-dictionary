@@ -38,4 +38,4 @@
 
   .content
     .@content-box__content
-      = simple_format(@content.content)
+      = safe_join(@content.content.split("\n"),tag(:br))
