@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      content: コンテンツ  #g
+      content_tag: コンテンツタグ  #g
+
+    attributes:
+      content:
+        base_tags: ベースタグ  #g
+        content: コンテンツ  #g
+        label_taggings: ラベルのタグ付け  #g
+        labels: ラベル  #g
+        tag_taggings: タグ付け  #g
+        taggings: タグ付け  #g
+        tags: タグ  #g
+        title: 題名  #g

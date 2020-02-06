@@ -6,19 +6,27 @@
       新着用語
 
     .content-header
-      .content-header__tag タグ
-      .content-header__title タイトル 
-      .content-header__content 説明
+      %tr
+        %td
+          .content-header__tag タグ
+        %td
+          .content-header__title タイトル 
+        %td
+          .content-header__content 説明
 
     - @contents.each do |content|
       .content-box
+        %tr
         .content-box__tag
-          - content.tags.each do |content_tag|
-            = link_to content_tag.name, content_path(content.id)
+          %td
+            - content.tag_list.each do |tag|
+              = link_to tag, content_path(content.id)
         .content-box__title
-          = link_to content.title, content_path(content.id)
+          %td
+            = link_to content.title, content_path(content.id)
         .content-box__content
-          = link_to content.content.truncate(30,omission: '...'), content_path(content.id)
+          %td
+            = link_to content.content.truncate(30,omission: '...'), content_path(content.id)
 
   .side
     検索用

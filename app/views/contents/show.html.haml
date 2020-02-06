@@ -14,16 +14,22 @@
         %ul
           %li
             = link_to '削除', content_path, method: :delete
-            = link_to '編集', edit_content_path
+            = link_to '編集', edit_content_path(@content.id)
 
     .title__tags
-      .title__tags__title
-        タグ：
+      タグ：
       .title__tags__tag
-        - @content.tags.each do |content_tag|
+        - @content.tag_list.each do |tag|
           %ul
             %li
-              = content_tag.name
+              = tag
+      -# .title__updated_at
+      -#   最終更新日:
+      -#   = I18n.l @content.updated_at, format: :long
+      .title__tags__created_at 
+        投稿日：
+        = I18n.l @content.created_at, format: :long
+
 
   .content
     .@content-box__content
