@@ -1,10 +1,10 @@
 class ContentsController < ApplicationController
   def index
-    if params[:tag]
-      @contents = Content.tagged_with(params[:tag]).order(created_at: :desc).includes(:taggings, :tags)
-    else
-      @contents = Content.all.includes(:taggings, :tags)
-    end
+      if params[:tag]
+        @contents = Content.tagged_with(params[:tag]).order(created_at: :desc).includes(:taggings, :tags)
+      else
+        @contents = Content.all.includes(:taggings, :tags)
+      end
   end
 
   def new
@@ -43,10 +43,24 @@ class ContentsController < ApplicationController
     @post.save
     @post.reload
     @post.tags
-
     redirect_to root_path
   end
 
+  def search_title
+    @contents = Content.search_title(params[:keyword])
+    # respond_to do |format|
+    #   format.html
+    #   format.json
+    # end
+  end
+
+  def search_content
+    @contents = Content.search_content(params[:keyword])
+    # respond_to do |format|
+    #   format.html
+    #   format.json
+    # end
+  end
 
   private
 

@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'contents#index'
-  resources :contents, only: [:new, :create, :show, :destroy, :edit, :update]
+  devise_for :users
+  resources :contents do
+    collection do
+      get 'search_title'
+      get 'search_content'
+    end
+  end
+  
   resources :users, only: [:edit, :update]
 end
