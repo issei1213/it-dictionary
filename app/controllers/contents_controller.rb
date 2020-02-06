@@ -1,6 +1,10 @@
 class ContentsController < ApplicationController
   def index
-    @contents = Content.all.order(created_at: :desc).includes(:tags)
+    if params[:tag]
+      @contents = Content.tagged_with(params[:tag]).order(created_at: :desc).includes(:taggings, :tags)
+    else
+      @contents = Content.all.includes(:taggings, :tags)
+    end
   end
 
   def new
@@ -10,8 +14,8 @@ class ContentsController < ApplicationController
   def create
     @post = Content.new(title: post_params[:title],content: post_params[:content])
     @post.save
-    tag_list = post_params[:tag_name].split(/[[:blank:]]+/)
-    @post.save_tags(tag_list)
+    @post.tag_list.add(post_params[:tag_list],parse: true)
+    @post.save
     redirect_to root_path
   end
 
@@ -21,26 +25,25 @@ class ContentsController < ApplicationController
   end
 
   def destroy
-    content = Content.find(params[:id])
-    # tag_ids = content.tags.ids
-
-    # tag_ids.each do |tag|
-    #   Tag.find(tag).destroy
-    # end                         ※未実装
-    content.destroy
+    @content = Content.find(params[:id])
+    @content.tag_list.remove(@content.tag_list)
+    @content.destroy
+    @content.save
     redirect_to root_path
   end
 
   def edit
     @post = Content.find(params[:id])
-    @tag = @post.tags.name
   end
 
   def update
     @post = Content.find(params[:id])
-    @post = @post.update(title: post_params[:title],content: post_params[:content])
-    # tag_list = post_params[:tag_name].split(/[[:blank:]]+/)
-    # @post.update_tags(tag_list)
+    @content_update = @post.update(title: post_params[:title],content: post_params[:content])
+    @post.tag_list = post_params[:tag_list]
+    @post.save
+    @post.reload
+    @post.tags
+
     redirect_to root_path
   end
 
@@ -48,7 +51,8 @@ class ContentsController < ApplicationController
   private
 
   def post_params
-    params.require(:content).permit(:id,:title, :content, :tag_name)
+    params.require(:content).permit(:id,:title, :content, :tag_list)
   end
+
 
 end
