@@ -2,36 +2,27 @@
 
 .wrapper
   .main
-    .title
-      新着用語
-
     .content-header
-      %tr
-        %td
-          .content-header__tag タグ
-        %td
-          .content-header__title タイトル 
-        %td
-          .content-header__content 説明
-        %td
-          .content-header__name 投稿者
-
-    - @contents.each do |content|
-      .content-box
+      %table
         %tr
-        .content-box__tag
-          %td
-            - content.tag_list.each do |tag|
-              = link_to tag, content_path(content.id)
-        .content-box__title
-          %td
-            = link_to content.title, content_path(content.id)
-        .content-box__content
-          %td
-            = link_to content.content.truncate(40,omission: '...'), content_path(content.id)
-        .content-box__name
-          %td 
-            = content.user.name
+          %th.content-header__tag.title-bar タグ
+          %th.content-header__title.title-bar タイトル 
+          %th.content-header__content.title-bar 説明
+          %th.content-header__name.title-bar 投稿者
+
+      
+    .content-box
+      - @contents.each do |content|
+        = link_to content_path(content.id) do
+          %ul.line
+            %li.content-box__tag
+              = content.tag_list
+            %li.content-box__title
+              = content.title
+            %li.content-box__content
+              = content.content
+            %li.content-box__name
+              = content.user.name
 
   .side
     = render 'shared/top-side'

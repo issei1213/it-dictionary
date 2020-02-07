@@ -48,18 +48,20 @@ class ContentsController < ApplicationController
 
   def search_title
     @contents = Content.search_title(params[:keyword])
-    # respond_to do |format|
-    #   format.html
-    #   format.json
-    # end
+    @tag = @contents.new
+    respond_to do |format|
+      format.html
+      format.json
+    
+    end
   end
 
   def search_content
     @contents = Content.search_content(params[:keyword])
-    # respond_to do |format|
-    #   format.html
-    #   format.json
-    # end
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   private
