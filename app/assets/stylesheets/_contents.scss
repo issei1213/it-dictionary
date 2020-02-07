@@ -7,25 +7,26 @@
     width: 80%;
     background-color: #f8f6ef;
     padding-top: 10px;
-    .title{
-      margin: 0 auto;
-      font-size: 15px;
-      text-align: center;
-      background-color: #fce9a8;
-      width: 95%;
-    }
-    
     .content-header{
-      width: 95%;
-      margin: 0 auto;
-      display: flex;
-      text-align: center;
-      font-weight: bold;
+      margin-left: 5%;
+
+      table{
+        table-layout: fixed;
+        width: 95%;
+        text-align: center;
+      }
+      th{
+        border: 1px solid #bbb;
+        text-align: center;
+        background-color: #fce9a8;
+        
+
+      }
       &__tag{
-        width: 20%;
+        width: 15%;
       }
       &__title{
-        width: 30%;
+        width: 45%;
       }
       &__content{
         width: 40%;
@@ -33,65 +34,68 @@
       &__name{
         width: 10%;
       }
+    
     }
 
-
-    .content-box{
-      display: flex;
-      width: 95%;
-      margin: 0 auto;
-      border-bottom:double 3px  #8ec6ff;
-      &__tag{
-        width: 20%;
+    .content-buttom{
+      overflow: auto;
+      height: 90%;
+      margin-top: 30px;
+      .content-box{
+        width: 90%;
+        margin: 0 auto;
           a{
             text-decoration: none;
             color: black;
+            border-bottom: solid 3px #cce4ff;
+            position: relative;
+            ul{
+              &.line{
+                border-bottom: solid 3px #cce4ff;
+                li{
+                  display: inline-block;
+                  
+                    &.content-box__tag{
+                      width: 14%;
+                    }
+                    &.content-box__title{
+                      width: 40%;
+                    }
+                    &.content-box__content{
+                      width: 37%;
+                      text-overflow: ellipsis;
+                      overflow: hidden;
+                      white-space: nowrap;
+                      align-items: end;
+                    }
+                    &.content-box__name{
+                      width: 5%;
+                    }
+                }
+              }
+            }
           }
-      }
-      &__title{
-        width: 30%;
-        a{
-          text-decoration: none;
-          color: black;
-        }
-      }
-      &__content{
-        width: 40%;
-        a{
-          text-decoration: none;
-          color: black;
-        }
-      }
-      &__name{
-        padding-right: 3%;
-        text-align: right;
-        width: 10%;
-
       }
     }
   }
 
+
   .side{
+    p{
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      padding-top:15px;
+    }
+  
     width: 20%;
     background-color: #2f3e51;
-    .search-title{
-      padding-top: 10px;
-      h1{
-        color: white;
-        font-weight: bold;
-        text-align: center;
-      }
-      h2{
-        color: white;
-        font-weight: bold;
-        text-align: center;
-      }
-    }
 
+    .search-title{
       
-    .search-form{
       &__form-with{
         input[type=text] {
+          margin-top: 5px;
           width: 90%;
           margin-left: 5%;
           text-align: center;
@@ -101,6 +105,24 @@
           margin-left: 25%;
           margin-top: 10px;
           text-align: center;
+          display: none;      //ボタン非表示
+        }
+      }
+    }
+    .search-content{
+      &__form-with{
+        input[type=text] {
+          margin-top: 5px;
+          width: 90%;
+          margin-left: 5%;
+          text-align: center;
+        }
+        input[type=submit] {
+          width: 50%;
+          margin-left: 25%;
+          margin-top: 10px;
+          text-align: center;
+          display: none;      //ボタン非表示
         }
       }
     }
