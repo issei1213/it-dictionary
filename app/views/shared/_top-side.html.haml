@@ -11,3 +11,21 @@
   = form_with url: search_content_contents_path, method: :get, local: true ,class: 'search-content__form-with' do |f|
     = f.text_field :keyword, placeholder: "検索したい文言を入力",class: "search-content__form-with__input"
     = f.submit "検索", class: "search-content__form-with__btn"
+
+
+%p
+  上位10位タグ
+%table
+  %tr
+    %th 順位
+    %th タグ
+    %th カウント
+
+  - @tags.each_with_index do |tag,i|
+    %tr
+      %td
+        = i + 1
+      %td
+        = tag.name
+      %td
+        = tag.taggings_count

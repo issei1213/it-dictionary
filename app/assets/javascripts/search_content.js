@@ -32,7 +32,6 @@ $(function(){
           var tags = ` ${val}`;
           insertTAG += tags;
         }
-      console.log(insertTAG)
     });
     return insertTAG;
   }
@@ -54,16 +53,22 @@ $(function(){
           buildHTML(content);
         });
       }
-    // 失敗時
-      else{
-        contents.forEach(function(content){
-          buildHTML_notag_content(content);
+      $(document).ready(function(){
+        $(".content-box").fadeIn(1000);
+        $(".line").hover(function() {
+          $(this).stop().css({backgroundColor: "#ffcd00"});
+        },
+        function() {
+          $(this).stop().css({backgroundColor: "#f8f6ef" });
         });
-      }
+      });
     })
+    // 失敗時
     .fail(function(){
       console.log("NG");
     })
-
   });
+
 });
+
+

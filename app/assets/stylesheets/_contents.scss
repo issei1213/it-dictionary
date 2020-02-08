@@ -44,6 +44,7 @@
       .content-box{
         width: 90%;
         margin: 0 auto;
+        display: none;
           a{
             text-decoration: none;
             color: black;
@@ -51,10 +52,10 @@
             position: relative;
             ul{
               &.line{
+                
                 border-bottom: solid 3px #cce4ff;
                 li{
                   display: inline-block;
-                  
                     &.content-box__tag{
                       width: 14%;
                     }
@@ -71,6 +72,7 @@
                     &.content-box__name{
                       width: 5%;
                     }
+
                 }
               }
             }
