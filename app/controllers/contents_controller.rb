@@ -1,10 +1,11 @@
 class ContentsController < ApplicationController
   def index
       if params[:tag]
-        @contents = Content.tagged_with(params[:tag]).order(created_at: :desc).includes(:taggings, :tags)
+        @contents = Content.order(created_at: :DESC).tagged_with(params[:tag]).includes(:taggings, :tags)
       else
-        @contents = Content.all.includes(:taggings, :tags)
+        @contents = Content.all.order(created_at: :DESC).includes(:taggings, :tags)
       end
+      @tags = ActsAsTaggableOn::Tag.most_used(10)
   end
 
   def new
