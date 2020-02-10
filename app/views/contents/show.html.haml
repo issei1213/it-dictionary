@@ -13,7 +13,7 @@
       .title__content__items
         %ul
           %li
-            - if user_signed_in?
+            - if user_signed_in? && current_user.id == @content.user.id
               = link_to '削除', content_path, method: :delete
               = link_to '編集', edit_content_path(@content.id)
 
