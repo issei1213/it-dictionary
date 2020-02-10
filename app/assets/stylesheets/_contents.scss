@@ -20,7 +20,6 @@
         text-align: center;
         background-color: #fce9a8;
         
-
       }
       &__tag{
         width: 15%;
@@ -34,9 +33,7 @@
       &__name{
         width: 10%;
       }
-    
     }
-
     .content-buttom{
       overflow: auto;
       height: 90%;
@@ -52,8 +49,8 @@
             position: relative;
             ul{
               &.line{
-                
                 border-bottom: solid 3px #cce4ff;
+                transition: all 0.3s ease;
                 li{
                   display: inline-block;
                     &.content-box__tag{
@@ -72,8 +69,10 @@
                     &.content-box__name{
                       width: 5%;
                     }
-
                 }
+              }
+              &.line:hover{
+                background-color: #ffcd00;
               }
             }
           }
@@ -126,6 +125,26 @@
           text-align: center;
           display: none;      //ボタン非表示
         }
+      }
+    }
+    .tag-ranking{
+      margin: 0px 10px 0 10px;
+      table{
+        color: white;
+        text-align: center;
+      }
+      table th{
+        border: solid 1px #C0C0C0;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+      }
+      table td{
+        border: solid 1px;
+      }
+      th{
+        width: 10%;
+        text-align: center;
       }
     }
   }

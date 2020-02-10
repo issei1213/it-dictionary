@@ -5,7 +5,7 @@ class ContentsController < ApplicationController
       else
         @contents = Content.all.order(created_at: :DESC).includes(:taggings, :tags)
       end
-      @tags = ActsAsTaggableOn::Tag.most_used(10)
+      @tags = ActsAsTaggableOn::Tag.most_used(20)
   end
 
   def new
