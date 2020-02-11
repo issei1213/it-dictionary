@@ -28,27 +28,50 @@
         }
       }
     }
+    &__bar-under{
+      display: flex;
+      &__like-box{
+        display: flex;
+        &__count{
+          display: flex;
+        }
+        &__action{
+          margin-left: 30px;
+          width: 100px;
+          
+        }
+        input[type=submit] {
+          width: 120px;
+          margin-left: 5%;
+          margin-bottom: 10px;
+        }
+      }
+      &__user-name{
+        margin-left: 55%;
+      }
+      &__created_at{
+        margin-left: 2%;
+      }
+    }
+
     &__tags{
       color: black;
       display: flex;
       width: 90%;
+
       &__tag{
         display: flex;
+        margin-bottom: 10px;
         li{
-          margin-right: 5px;
-          padding-right: 10px;
-          padding-left: 10px;
+          margin: 0px 5px 5px 0px;
+          padding: 3px 10px 3px 10px;
           display: inline;
-          border: double;
           border: solid 1px #6091d3;
           border-radius: 1px;
         }
       }
-      &__created_at{
-        margin-left: auto;
-      }
-    }
   }
+}
   .content{
     padding-top: 10px;
     height: 75vh;

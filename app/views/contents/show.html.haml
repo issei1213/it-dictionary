@@ -9,13 +9,30 @@
     .title__content
       .title__content__title
         = simple_format(@content.title)
-      
       .title__content__items
         %ul
           %li
             - if user_signed_in? && current_user.id == @content.user.id
               = link_to '削除', content_path, method: :delete
               = link_to '編集', edit_content_path(@content.id)
+
+    .title__bar-under
+      .title__bar-under__like-box
+        .title__bar-under__like-box__count
+          いいね件数:
+          = @content.likes.count
+        .title__bar-under__like-box__action
+          - if current_user.id != @content.user.id
+            - if current_user.already_liked?(@content)
+              = button_to 'いいねを取り消す', content_like_path(@content), method: :delete
+            - else
+              = button_to 'いいね', content_likes_path(@content)
+      .title__bar-under__user-name 
+        投稿者：
+        = @content.user.name
+      .title__bar-under__created_at 
+        投稿日：
+        = I18n.l @content.created_at, format: :long
 
     .title__tags
       タグ：
@@ -27,12 +44,7 @@
       -# .title__updated_at
       -#   最終更新日:
       -#   = I18n.l @content.updated_at, format: :long
-      .title__tags__user-name
-        投稿者：
-        = @content.user.name
-      .title__tags__created_at 
-        投稿日：
-        = I18n.l @content.created_at, format: :long
+
 
 
 

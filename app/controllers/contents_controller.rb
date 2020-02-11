@@ -9,7 +9,7 @@ class ContentsController < ApplicationController
   end
 
   def new
-    @post=Content.new
+    @post = Content.new
   end
 
   def create
@@ -22,6 +22,7 @@ class ContentsController < ApplicationController
 
   def show
     @content = Content.find(params[:id])
+    @like = Like.new
     
   end
 
@@ -53,7 +54,7 @@ class ContentsController < ApplicationController
     respond_to do |format|
       format.html
       format.json
-    
+
     end
   end
 
