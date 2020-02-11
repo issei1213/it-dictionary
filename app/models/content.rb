@@ -3,7 +3,7 @@ class Content < ApplicationRecord
   acts_as_taggable_on :labels
 
   belongs_to :user
-
+  has_many :likes, dependent: :destroy
 
   def self.search_title(search)
     return Content.all unless search
