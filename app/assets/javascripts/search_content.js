@@ -21,6 +21,7 @@ $(function(){
     $(".content-buttom").append(html);
   }
 
+
   function build_tag(tag){
     var insertTAG = '';
     $.each(tag,function(index,val){
