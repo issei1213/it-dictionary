@@ -49,7 +49,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'i18n_generators'
-  gem 'devise'
+
 end
 
 group :test do
@@ -73,6 +73,8 @@ gem 'acts-as-taggable-on'
 gem 'jquery-rails'
 
 gem 'font-awesome-sass'
+
+gem 'devise'
 
 group :production do
   gem 'unicorn', '5.4.1'
