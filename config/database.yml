@@ -51,4 +51,4 @@ production:
   <<: *default
   database: it-dictionary_production
   username: it-dictionary
-  password: <%= ENV['IT-DICTIONARY_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
