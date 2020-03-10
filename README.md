@@ -1,24 +1,45 @@
-# README
+# アプリ名
+## IT-Dictionary
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 概要実装機能
+  IT業界(プログラミング言語)に特化した簡易版辞書APL
 
-Things you may want to cover:
+## 制作背景
+  プログラミング学習において、不明名単語や覚えられない単語をメモしておき、簡単に検索できることを目的としました。また、流行の言語を把握する為のタグ機能や、分かりやすかった投稿に対してのいいね機能を実装しました。
 
-* Ruby version
+## 実装機能
+- 新規投稿・編集・削除機能
+- ユーザ管理機能(gem:devise)
+- 検索機能(Ajax)
+- いいね機能
+- タグ管理機能(gem:acts-as-taggable-on)
 
-* System dependencies
+## 本番環境(デプロイ先とテストアカウント＆ID)
+- GitHub:https://github.com/issei1213/it-dictionary
+- デプロイ先:http://18.176.136.248/
+- テストアカウント: Email: test123@gmail.com / Password: test1232020
 
-* Configuration
+## DEMO
 
-* Database creation
 
-* Database initialization
+## 工夫したポイント
+ - Ajaxに検索機能
+ - 検索結果のタグ表示
+ - タグ機能のライブラリ実装
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## 使用技術(開発環境)
+  - 言語：Haml,SCSS,Ruby,jQuery
+  - ツール：Ruby on Rails
+  - DB：musql
+  - サーバー：AWS
 
-* Deployment instructions
+## 課題や今後実装したい機能
+  - 画像投稿機能
+  - インクリメンタルサーチのプルダウンで場合分け
+  - タグ登録時のplugin機能
+  - いいね機能のデザイン変更・非同期通信
+  - 投稿時の５W１H入力
+  - コメント機能（非同期通信）
 
-* ...
+## DB設計
