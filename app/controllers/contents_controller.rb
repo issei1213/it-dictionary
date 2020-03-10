@@ -50,7 +50,7 @@ class ContentsController < ApplicationController
 
   def search_title
     @contents = Content.search_title(params[:keyword])
-    @tag = @contents.new
+    @tags = ActsAsTaggableOn::Tag.most_used(20)
     respond_to do |format|
       format.html
       format.json
@@ -59,6 +59,7 @@ class ContentsController < ApplicationController
 
   def search_content
     @contents = Content.search_content(params[:keyword])
+    @tags = ActsAsTaggableOn::Tag.most_used(20)
     respond_to do |format|
       format.html
       format.json
