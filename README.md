@@ -20,6 +20,17 @@
 - テストアカウント: Email: test123@gmail.com / Password: test1232020
 
 ## DEMO
+## トップ画面
+![image](https://user-images.githubusercontent.com/59830008/76284294-3b946a00-62e0-11ea-8c62-c46943b3e481.png)
+
+## 投稿画面
+![image](https://user-images.githubusercontent.com/59830008/76284326-4fd86700-62e0-11ea-912f-0264ad0b9998.png)
+
+## 編集画面
+![image](https://user-images.githubusercontent.com/59830008/76284361-6f6f8f80-62e0-11ea-8efa-29d4bdfb2321.png)
+
+## ユーザ登録画面
+![image](https://user-images.githubusercontent.com/59830008/76284379-7bf3e800-62e0-11ea-9854-ecc562f3be67.png)
 
 
 ## 工夫したポイント
@@ -43,3 +54,5 @@
   - コメント機能（非同期通信）
 
 ## DB設計
+##  ER図
+![データベース ER図](https://user-images.githubusercontent.com/59830008/76284469-c7a69180-62e0-11ea-9ab1-68c0278c42ce.jpeg)
