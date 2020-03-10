@@ -54,5 +54,4 @@
   - コメント機能（非同期通信）
 
 ## DB設計
-##  ER図
 ![データベース ER図](https://user-images.githubusercontent.com/59830008/76284469-c7a69180-62e0-11ea-9ab1-68c0278c42ce.jpeg)
