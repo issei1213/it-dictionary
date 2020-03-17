@@ -42,7 +42,7 @@
 ## 使用技術(開発環境)
   - 言語：Haml,SCSS,Ruby,jQuery
   - ツール：Ruby on Rails
-  - DB：musql
+  - DB：mysql
   - サーバー：AWS
 
 ## 課題や今後実装したい機能
