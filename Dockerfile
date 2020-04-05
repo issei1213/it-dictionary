@@ -4,10 +4,13 @@ RUN mkdir /myproject
 
 WORKDIR /myproject
 
-ADD Gemfile /myproject/Gemfile
-ADD Gemfile.lock /myproject/Gemfile.lock
+ENV APP_ROOT /app
+WORKDIR $APP_ROOT
 
-RUN gem update --system && gem install bundler:2.0.2
+ADD Gemfile Gemfile.lock $APP_ROOT/
+
+RUN gem install bundler:2.1.4
+
 RUN bundle install
 
-ADD . /myproject
+ADD . $APP_ROOT
